@@ -58,3 +58,11 @@ streamlit run app.py
 ```bash
 http://localhost:8501
 ```
+
+### 📄 License
+This project is released under the **MIT License**.
+You are free to use, modify, and distribute it.
+
+### 👤 Author
+Built with ❤️ using Python & Streamlit
+If you find this useful, consider ⭐ starring the repo!
