@@ -25,7 +25,7 @@ It allows users to perform common PDF operations securely and locally without up
 - **Frontend / UI**: Streamlit  
 - **PDF Processing**: `pypdf`  
 - **Watermark Generation**: `reportlab`  
-- **Language**: Python 3.9+
+- **Language**: Python 3.0+
 
 ---
 
@@ -35,3 +35,11 @@ It allows users to perform common PDF operations securely and locally without up
 ```bash
 git clone https://github.com/your-username/fix-my-pdf.git
 cd fix-my-pdf
+
+### 2️⃣ Create a virtual environment (recommended)
+python -m venv venv
+source venv/bin/activate      # macOS/Linux
+venv\Scripts\activate         # Windows
+
+### 3️⃣ Install dependencies
+pip install -r requirements.txt
