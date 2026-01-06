@@ -43,7 +43,18 @@ python -m venv venv
 source venv/bin/activate      # macOS/Linux
 venv\Scripts\activate         # Windows
 ```
+
 ### 3️⃣ Install dependencies
 ```bash
 pip install -r requirements.txt
+```
 
+### ▶️ Run the Application
+```bash
+streamlit run app.py
+```
+
+### Then open your browser at:
+```bash
+http://localhost:8501
+```
