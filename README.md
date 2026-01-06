@@ -34,7 +34,7 @@ It allows users to perform common PDF operations securely and locally without up
 ### 1️⃣ Clone the repository
 ```bash
 git clone https://github.com/your-username/fix-my-pdf.git
-cd fix-my-pdf
+cd fix-my-pdf```
 
 ### 2️⃣ Create a virtual environment (recommended)
 python -m venv venv
@@ -43,3 +43,4 @@ venv\Scripts\activate         # Windows
 
 ### 3️⃣ Install dependencies
 pip install -r requirements.txt
+
