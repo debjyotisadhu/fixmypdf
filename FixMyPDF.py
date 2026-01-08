@@ -93,6 +93,34 @@ try:
     # =====| UNLOCK |=====
     elif operation == "Unlock PDF" and uploaded_files:
         reader = PdfReader(uploaded_files[0])
+    
+        if not reader.is_encrypted:
+            st.info("PDF is already unlocked.")
+        else:
+            if not password:
+                st.error("Password is required to unlock this PDF.")
+                st.stop()
+    
+            decrypt_result = reader.decrypt(password)
+            if decrypt_result == 0:
+                st.error("Incorrect password or unsupported encryption.")
+                st.stop()
+    
+            writer = PdfWriter()
+            writer.clone_document_from_reader(reader)
+    
+            # IMPORTANT: explicitly remove encryption
+            writer.encrypt(user_pwd=None, owner_pwd=None)
+    
+            buf = io.BytesIO()
+            writer.write(buf)
+            buf.seek(0)
+    
+            st.success("PDF unlocked successfully!")
+            download_button(buf, "unlocked.pdf")
+
+    elif operation == "Unlock PDF Not used" and uploaded_files:
+        reader = PdfReader(uploaded_files[0])
         if not reader.is_encrypted:
             st.info("PDF is already unlocked.")
         else:
@@ -123,6 +151,7 @@ try:
         buf.seek(0)
         st.success("PDF rotated successfully!")
         download_button(buf, "rotated.pdf")
+
     # =====| EXTRACT |=====
     elif operation == "Extract Pages" and uploaded_files:
         pages_input = st.text_input(
